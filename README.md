@@ -1,7 +1,7 @@
 # 🛍️ ShopNest — Full Stack E-Commerce Platform
 
-> A modern, full-featured e-commerce web application built with the MERN stack. ShopNest offers a seamless shopping experience with a clean UI, secure authentication, and a powerful admin panel.
-
+> A modern, full-featured e-commerce web application built with the MERN stack. ShopNest offers a seamless shopping experience with a clean UI, secure authentication, and a powerful admin panel.<br><br>
+> 🚀 Live Demo: https://shopnest-mv73.onrender.com
 ---
 
 ## 📸 Screenshots
