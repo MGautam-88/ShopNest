@@ -1,0 +1,775 @@
+{
+  "info": {
+    "_postman_id": "4d508ed1-b52b-4ead-8650-74f808273ac4",
+    "name": "ShopNest",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51018483",
+    "_collection_link": "https://go.postman.co/collection/51018483-4d508ed1-b52b-4ead-8650-74f808273ac4?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register user",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Harman\",\r\n    \"email\": \"user3@gmail.com\",\r\n    \"password\": \"p123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "HealthCheck",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"admin2@shopnest.com\",\r\n    \"password\": \"cd34\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ADMIN- Get all users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMGI4MzA0MjRmYTZhMWJhNGY3MDcyZCIsImlhdCI6MTc3OTE0MDczMSwiZXhwIjoxNzgwNDM2NzMxfQ.LNIgsuFBAdUTC6gtXjVSLi_dhTmxhcD-NvPZcwFuDXA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "auth",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ADMIN- Get user by email",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMGI4MzA0MjRmYTZhMWJhNGY3MDcyZCIsImlhdCI6MTc3OTE0MTExMiwiZXhwIjoxNzgwNDM3MTEyfQ.5RnNgJ7LDGgJWDcFMaclswqUxis7iLKF29EpZ30cWYE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"user3@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/users/email",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "auth",
+                "users",
+                "email"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "ADMIN- Delete Product by ID",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMGI4MzA0MjRmYTZhMWJhNGY3MDcyZCIsImlhdCI6MTc3OTMxMTU3MiwiZXhwIjoxNzgwNjA3NTcyfQ.sXifjKppxJEyoFoybuHfJvrgl0FMIjodnc8SXblk8-I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <ADMIN_JWT>"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "type": "text",
+                  "key": "name",
+                  "value": "iPhone"
+                },
+                {
+                  "type": "text",
+                  "key": "description",
+                  "value": "Updated description"
+                },
+                {
+                  "type": "text",
+                  "key": "price",
+                  "value": "999.99"
+                },
+                {
+                  "type": "text",
+                  "key": "category",
+                  "value": "electronics"
+                },
+                {
+                  "type": "text",
+                  "key": "stock",
+                  "value": "25"
+                },
+                {
+                  "type": "file",
+                  "key": "image",
+                  "src": "/full/path/to/new-image.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/products/6a0e2c10f1e34d1cc824b730",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "products",
+                "6a0e2c10f1e34d1cc824b730"
+              ]
+            },
+            "description": "Generated from cURL: curl -X PUT \"http://localhost:3000/api/products/<PRODUCT_ID>\" \\\n  -H \"Authorization: Bearer <ADMIN_JWT>\" \\\n  -F \"name=Updated Product Name\" \\\n  -F \"description=Updated description\" \\\n  -F \"price=99.99\" \\\n  -F \"category=electronics\" \\\n  -F \"stock=25\" \\\n  -F \"image=@/full/path/to/new-image.jpg\""
+          },
+          "response": []
+        },
+        {
+          "name": "ADMIN- Update Product by ID",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMGI4MzA0MjRmYTZhMWJhNGY3MDcyZCIsImlhdCI6MTc3OTMxMTU3MiwiZXhwIjoxNzgwNjA3NTcyfQ.sXifjKppxJEyoFoybuHfJvrgl0FMIjodnc8SXblk8-I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <ADMIN_JWT>"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "type": "text",
+                  "key": "name",
+                  "value": "iPhone"
+                },
+                {
+                  "type": "text",
+                  "key": "description",
+                  "value": "Updated description"
+                },
+                {
+                  "type": "text",
+                  "key": "price",
+                  "value": "999.99"
+                },
+                {
+                  "type": "text",
+                  "key": "category",
+                  "value": "electronics"
+                },
+                {
+                  "type": "text",
+                  "key": "stock",
+                  "value": "25"
+                },
+                {
+                  "type": "file",
+                  "key": "image",
+                  "src": "/full/path/to/new-image.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/products/6a0e2c10f1e34d1cc824b730",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "products",
+                "6a0e2c10f1e34d1cc824b730"
+              ]
+            },
+            "description": "Generated from cURL: curl -X PUT \"http://localhost:3000/api/products/<PRODUCT_ID>\" \\\n  -H \"Authorization: Bearer <ADMIN_JWT>\" \\\n  -F \"name=Updated Product Name\" \\\n  -F \"description=Updated description\" \\\n  -F \"price=99.99\" \\\n  -F \"category=electronics\" \\\n  -F \"stock=25\" \\\n  -F \"image=@/full/path/to/new-image.jpg\""
+          },
+          "response": []
+        },
+        {
+          "name": "ADMIN- Create New Product",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMGI4MzA0MjRmYTZhMWJhNGY3MDcyZCIsImlhdCI6MTc3OTMxMTU3MiwiZXhwIjoxNzgwNjA3NTcyfQ.sXifjKppxJEyoFoybuHfJvrgl0FMIjodnc8SXblk8-I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <ADMIN_JWT>"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "type": "text",
+                  "key": "name",
+                  "value": "Test Product-3"
+                },
+                {
+                  "type": "text",
+                  "key": "description",
+                  "value": "Sample productIMGS"
+                },
+                {
+                  "type": "text",
+                  "key": "price",
+                  "value": "76"
+                },
+                {
+                  "type": "text",
+                  "key": "category",
+                  "value": "toys"
+                },
+                {
+                  "type": "text",
+                  "key": "stock",
+                  "value": "23"
+                },
+                {
+                  "type": "file",
+                  "key": "image",
+                  "src": "/C:/Users/PF3YP/OneDrive/Pictures/Macbook-Wallpaper-4K-Colorful.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/products/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "products",
+                ""
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST \"http://localhost:3000/api/products/\" \\\n  -H \"Authorization: Bearer <ADMIN_JWT>\" \\\n  -F \"name=Test Product\" \\\n  -F \"description=Sample product\" \\\n  -F \"price=9.99\" \\\n  -F \"category=general\" \\\n  -F \"stock=10\" \\\n  -F \"image=@/full/path/to/image.jpg\""
+          },
+          "response": []
+        },
+        {
+          "name": "Single-Product",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMGI4MzA0MjRmYTZhMWJhNGY3MDcyZCIsImlhdCI6MTc3OTE0MTExMiwiZXhwIjoxNzgwNDM3MTEyfQ.5RnNgJ7LDGgJWDcFMaclswqUxis7iLKF29EpZ30cWYE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"user3@gmail.com\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/products/6a0e246212a4d38e6aaf37d5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "products",
+                "6a0e246212a4d38e6aaf37d5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All-Products",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMGI4MzA0MjRmYTZhMWJhNGY3MDcyZCIsImlhdCI6MTc3OTE0MTExMiwiZXhwIjoxNzgwNDM3MTEyfQ.5RnNgJ7LDGgJWDcFMaclswqUxis7iLKF29EpZ30cWYE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"user3@gmail.com\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/products/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "products",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Create Order",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMGI4MzA0MjRmYTZhMWJhNGY3MDcyZCIsImlhdCI6MTc3OTMxMTU3MiwiZXhwIjoxNzgwNjA3NTcyfQ.sXifjKppxJEyoFoybuHfJvrgl0FMIjodnc8SXblk8-I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <YOUR_JWT_TOKEN>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"items\": [\n      {\n        \"productID\": \"6a0e246212a4d38e6aaf37d5\",\n        \"quantity\": 2,\n        \"price\": 9.99\n      }\n    ],\n    \"totalAmount\": 19.98,\n    \"address\": {\n      \"fullName\": \"Rahul Sharma\",\n      \"addressLine1\": \"123 Main Street\",\n      \"addressLine2\": \"Apt 4B\",\n      \"postalCode\": \"560001\",\n      \"city\": \"Bengaluru\",\n      \"country\": \"India\"\n    },\n    \"paymentID\": \"pay_1234567890\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST \"http://localhost:3000/api/orders\" \\\n  -H \"Authorization: Bearer <YOUR_JWT_TOKEN>\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"items\": [\n      {\n        \"productID\": \"665a1234567890abcdef1234\",\n        \"quantity\": 2,\n        \"price\": 76\n      }\n    ],\n    \"totalAmount\": 152,\n    \"address\": {\n      \"fullName\": \"Gautam Sharma\",\n      \"addressLine1\": \"123 Main Street\",\n      \"addressLine2\": \"Apt 4B\",\n      \"postalCode\": \"560001\",\n      \"city\": \"Bengaluru\",\n      \"country\": \"India\"\n    },\n    \"paymentID\": \"pay_1234567890\"\n  }'"
+          },
+          "response": []
+        },
+        {
+          "name": "ADMIN- See all Orders",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTM5ZDFjZmQ3NTAwYzBiYjVlN2ViMyIsImlhdCI6MTc3OTY3MDUxMywiZXhwIjoxNzgwOTY2NTEzfQ.AXukN0dCSfS0XaJOi-rQyZLJQiEoAN50EBoei0J1ZSU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <YOUR_JWT_TOKEN>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST \"http://localhost:3000/api/orders\" \\\n  -H \"Authorization: Bearer <YOUR_JWT_TOKEN>\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"items\": [\n      {\n        \"productID\": \"665a1234567890abcdef1234\",\n        \"quantity\": 2,\n        \"price\": 76\n      }\n    ],\n    \"totalAmount\": 152,\n    \"address\": {\n      \"fullName\": \"Gautam Sharma\",\n      \"addressLine1\": \"123 Main Street\",\n      \"addressLine2\": \"Apt 4B\",\n      \"postalCode\": \"560001\",\n      \"city\": \"Bengaluru\",\n      \"country\": \"India\"\n    },\n    \"paymentID\": \"pay_1234567890\"\n  }'"
+          },
+          "response": []
+        },
+        {
+          "name": "ADMIN- Update status",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTM5ZDFjZmQ3NTAwYzBiYjVlN2ViMyIsImlhdCI6MTc3OTY3MDUxMywiZXhwIjoxNzgwOTY2NTEzfQ.AXukN0dCSfS0XaJOi-rQyZLJQiEoAN50EBoei0J1ZSU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <YOUR_JWT_TOKEN>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\":\"shipped\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/orders/6a139d1cfd7500c0bb5e7ec5/status",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "6a139d1cfd7500c0bb5e7ec5",
+                "status"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST \"http://localhost:3000/api/orders\" \\\n  -H \"Authorization: Bearer <YOUR_JWT_TOKEN>\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"items\": [\n      {\n        \"productID\": \"665a1234567890abcdef1234\",\n        \"quantity\": 2,\n        \"price\": 76\n      }\n    ],\n    \"totalAmount\": 152,\n    \"address\": {\n      \"fullName\": \"Gautam Sharma\",\n      \"addressLine1\": \"123 Main Street\",\n      \"addressLine2\": \"Apt 4B\",\n      \"postalCode\": \"560001\",\n      \"city\": \"Bengaluru\",\n      \"country\": \"India\"\n    },\n    \"paymentID\": \"pay_1234567890\"\n  }'"
+          },
+          "response": []
+        },
+        {
+          "name": "MyOrders",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMGI4MzA0MjRmYTZhMWJhNGY3MDcyZCIsImlhdCI6MTc3OTMxMTU3MiwiZXhwIjoxNzgwNjA3NTcyfQ.sXifjKppxJEyoFoybuHfJvrgl0FMIjodnc8SXblk8-I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <YOUR_JWT_TOKEN>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/orders/myorders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "orders",
+                "myorders"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST \"http://localhost:3000/api/orders\" \\\n  -H \"Authorization: Bearer <YOUR_JWT_TOKEN>\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"items\": [\n      {\n        \"productID\": \"665a1234567890abcdef1234\",\n        \"quantity\": 2,\n        \"price\": 76\n      }\n    ],\n    \"totalAmount\": 152,\n    \"address\": {\n      \"fullName\": \"Gautam Sharma\",\n      \"addressLine1\": \"123 Main Street\",\n      \"addressLine2\": \"Apt 4B\",\n      \"postalCode\": \"560001\",\n      \"city\": \"Bengaluru\",\n      \"country\": \"India\"\n    },\n    \"paymentID\": \"pay_1234567890\"\n  }'"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "ADMIN- Analytics",
+      "item": [
+        {
+          "name": "All details",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMGI4MzA0MjRmYTZhMWJhNGY3MDcyZCIsImlhdCI6MTc3OTMxMTU3MiwiZXhwIjoxNzgwNjA3NTcyfQ.sXifjKppxJEyoFoybuHfJvrgl0FMIjodnc8SXblk8-I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <YOUR_JWT_TOKEN>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/analytics/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "analytics",
+                ""
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST \"http://localhost:3000/api/orders\" \\\n  -H \"Authorization: Bearer <YOUR_JWT_TOKEN>\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"items\": [\n      {\n        \"productID\": \"665a1234567890abcdef1234\",\n        \"quantity\": 2,\n        \"price\": 76\n      }\n    ],\n    \"totalAmount\": 152,\n    \"address\": {\n      \"fullName\": \"Gautam Sharma\",\n      \"addressLine1\": \"123 Main Street\",\n      \"addressLine2\": \"Apt 4B\",\n      \"postalCode\": \"560001\",\n      \"city\": \"Bengaluru\",\n      \"country\": \"India\"\n    },\n    \"paymentID\": \"pay_1234567890\"\n  }'"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "endpoint",
+      "value": ""
+    }
+  ]
+}
