@@ -38,10 +38,6 @@
 
 ## 📧 Email Notifications — Screenshots
 
-### ✅ Welcome / Verification Email
-<!-- Add screenshot of verification email received here -->
-![Verification Email](./screenshots/email-verification.png)
-
 ### 📦 Order Confirmation Email
 <!-- Add screenshot of order confirmation email received here -->
 ![Order Confirmation Email](./screenshots/email-order-confirmation.png)
