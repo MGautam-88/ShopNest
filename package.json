@@ -8,10 +8,11 @@
   "main": "index.js",
   "scripts": {
     "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm install && npm run build",
+    "start": "cd backend && npm start",
+    "dev": "concurrently \"npm run start:server\" \"npm run start:client\"",
     "start:server": "cd backend && npm run dev",
     "start:client": "cd frontend && npm run start",
-    "dev": "concurrently \"npm run start:server\" \"npm run start:client\"",
-    "build": "cd frontend && npm install && npm run build",
     "seed": "npm --prefix backend run seed"
   },
   "dependencies": {
